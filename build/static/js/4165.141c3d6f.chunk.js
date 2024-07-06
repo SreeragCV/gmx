@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgambit_interface=self.webpackChunkgambit_interface||[]).push([[4165],{34165:(e,a,t)=>{t.r(a),t.d(a,{default:()=>c.I});var c=t(67981)}}]);
