@@ -1321,16 +1321,20 @@ export function TradeBox(p: Props) {
     [isSubmitButtonDisabled, shouldDisableValidation, isCursorInside]
   );
 
+  // button content
   const buttonContent = (
     <Button
       variant="primary-action"
       className="w-full"
       onClick={onSubmit}
       disabled={isSubmitButtonDisabled && !shouldDisableValidationForTesting}
+      // disabled={false}
     >
       {buttonErrorText || submitButtonText}
     </Button>
   );
+
+  // button for submitting the order
   const button = tooltipContent ? (
     <Tooltip
       className="w-full"
@@ -1418,6 +1422,7 @@ export function TradeBox(p: Props) {
                 )}
               </ExchangeInfo.Group>
             </ExchangeInfo>
+            {/* button for submitting the order */}
             <div className="Exchange-swap-button-container">{button}</div>
           </form>
         </div>
@@ -1428,6 +1433,7 @@ export function TradeBox(p: Props) {
         {isPosition && <MarketCard isLong={isLong} marketInfo={marketInfo} allowedSlippage={allowedSlippage} />}
       </div>
 
+      {/* modal which pops up after submitting the form */}
       <ConfirmationBox
         isVisible={stage === "confirmation"}
         error={buttonErrorText}

@@ -991,6 +991,7 @@ export function ConfirmationBox(p: Props) {
     );
   }
 
+  // function rendering the available liquidity in both the renderIncreaseOrderSection and renderSwapSection
   function renderAvailableLiquidity() {
     const riskThresholdBps = 5000n;
     let availableLiquidityUsd: bigint | undefined = undefined;
@@ -1044,6 +1045,7 @@ export function ConfirmationBox(p: Props) {
     );
   }
 
+  // function rendering high spread warning in the swap order (renderSwapSection).
   function renderSwapSpreadWarning() {
     if (!isMarket) {
       return null;
@@ -1192,6 +1194,7 @@ export function ConfirmationBox(p: Props) {
 
   const tradeboxPoolWarnings = useTradeboxPoolWarnings(false, "text-gray-300");
 
+  // function which is rendered if order is confirmed on positions (isIncrease).
   function renderIncreaseOrderSection() {
     if (!marketInfo || !fromToken || !collateralToken || !toToken) {
       return null;
@@ -1436,6 +1439,7 @@ export function ConfirmationBox(p: Props) {
     );
   }
 
+  // modal which pop up when confirming a swap order.
   function renderSwapSection() {
     return (
       <ExchangeInfo>
